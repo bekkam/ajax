@@ -3,9 +3,19 @@
 
 // PART 1: SHOW A FORTUNE
 
+function replaceFortune(results) {
+    //set fortune equal to results for clarity, h/e in this particular fxn, we could pass 
+    //results directly
+    var fortune = results;
+
+    $("#fortune-text").html(fortune);
+}
+
 function showFortune(evt) {
 
     // TODO: get the fortune and show it in the #fortune-text div
+    $.get("/fortune", replaceFortune);
+
 }
 
 $('#get-fortune-button').on('click', showFortune);
